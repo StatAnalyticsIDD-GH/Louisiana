@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CHATTER — EDF Air Tracker Map – EDF CHATTER</title>
+<title>CHATTER — EDF Air Tracker Map – Louisiana CHATTER</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EDF CHATTER</span>
+    <span class="navbar-title">Louisiana CHATTER</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -102,10 +102,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Louisiana</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./index_bg1_location.html"> 
 <span class="menu-text">Cancer Risk by Location</span></a>
@@ -119,10 +115,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Other Health Risks by Pollutants and Location</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index_bg2_effect.html"> 
-<span class="menu-text">Other Health Risks by Health Indicator</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./index_bg3_location.html"> 
 <span class="menu-text">EPA Criteria Pollutants by Location</span></a>
   </li>  
@@ -132,11 +124,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./index_methods.html"> 
-<span class="menu-text">Data &amp; Methods</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index_faq.html"> 
-<span class="menu-text">FAQ</span></a>
+<span class="menu-text">Data, Methods &amp; FAQ</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -222,8 +210,8 @@ grid-auto-rows: minmax(0, 1fr);">
 EDF Global Clean Air Air Tracker — Louisiana
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
-<p>This tab embeds the <strong>EDF Global Clean Air Air Tracker</strong>, centered on Louisiana and showing <strong>PM2.5</strong> against the <strong>EPA</strong> air quality standard. EDF’s Air Tracker is a real-time mapping tool that helps people learn about the air quality in their neighborhoods. Air Tracker combines air pollution data and weather forecasting to reveal what pollutants are in the air and where they may be coming from. Whereas CHATTER focuses on providing information about health risks associated with pollution levels measured at local monitors, Air Tracker can be a helpful tool for identifying potential sources of local air pollution. The map below is loaded live from EDF each time this page is opened, so it always reflects EDF’s current data — it is not a snapshot taken when this dashboard was last rendered. Drag the map to look at other parts of Louisiana.</p>
-<p><strong>This map is not the same data as the other tabs.</strong> The CHATTER heatmaps on this site are built from LDEQ monitor data reported to EPA, which CHATTER processes automatically, using EPA design values and screening levels in calculations. The Air Tracker is an EDF tool, with its own data sources, methodology, and update schedule. The two can interpret the data in different ways, and neither is “wrong” — they answer slightly different questions. Use the Air Tracker for a live regional picture of pollutant levels and weather-related data to determine where they came from, and the CHATTER tabs to look at time-related trends in air pollutant levels and whether there are health concerns to follow more closely based on comparison to health-based screening levels.</p>
+<p>This page embeds the <strong>EDF Global Clean Air Air Tracker</strong>, centered on Louisiana and showing <strong>fine particles (PM₂.₅)</strong> against the <strong>EPA</strong> air quality standard. EDF’s Air Tracker is a real-time mapping tool that helps people learn about the air quality in their neighborhoods. Air Tracker combines air pollution data and weather forecasting to reveal what pollutants are in the air and where they may be coming from. Whereas CHATTER focuses on providing information about health risks associated with pollution levels measured at local monitors, Air Tracker can be a helpful tool for identifying potential sources of local air pollution. The map below is loaded live from EDF each time this page is opened, so it always reflects EDF’s current data — it is not a snapshot taken when this dashboard was last rendered. Drag the map to look at other parts of Louisiana.</p>
+<p><strong>This map is not the same data as the other pages.</strong> The CHATTER heatmaps on this site are built from LDEQ monitor data reported to EPA, which CHATTER processes automatically, using EPA design values and screening levels in calculations. The Air Tracker is an EDF tool, with its own data sources, methodology, and update schedule. The two can interpret the data in different ways, and neither is “wrong” — they answer slightly different questions. Use the Air Tracker for a live regional picture of pollutant levels and weather-related data to determine where they came from, and the CHATTER pages to look at time-related trends in air pollutant levels and whether there are health concerns to follow more closely based on comparison to health-based screening levels.</p>
 <p>If the map does not appear below, EDF’s site is declining to be embedded in another page. Use the button to open it directly.</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -332,7 +320,7 @@ Air Tracker (live)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/StatAnalyticsIDD-GH\.github\.io\/Louisiana\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -660,6 +648,19 @@ Air Tracker (live)
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 StatAnalytics IDD, LLC, with Environmental Defense Fund · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> · not for commercial use</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (_event) {

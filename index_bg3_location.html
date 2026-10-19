@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CHATTER — EPA Criteria Pollutants by Location – EDF CHATTER</title>
+<title>CHATTER — EPA Criteria Pollutants by Location – Louisiana CHATTER</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EDF CHATTER</span>
+    <span class="navbar-title">Louisiana CHATTER</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -102,10 +102,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Louisiana</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./index_bg1_location.html"> 
 <span class="menu-text">Cancer Risk by Location</span></a>
@@ -119,10 +115,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Other Health Risks by Pollutants and Location</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index_bg2_effect.html"> 
-<span class="menu-text">Other Health Risks by Health Indicator</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./index_bg3_location.html" aria-current="page"> 
 <span class="menu-text">EPA Criteria Pollutants by Location</span></a>
   </li>  
@@ -132,11 +124,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./index_methods.html"> 
-<span class="menu-text">Data &amp; Methods</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index_faq.html"> 
-<span class="menu-text">FAQ</span></a>
+<span class="menu-text">Data, Methods &amp; FAQ</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -186,22 +174,18 @@ ul.task-list li input[type="checkbox"] {
 .card-body img { display: block; height: auto !important; margin: 0 !important; }
 .card-header { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
 .bslib-gap-spacing { gap: 0.4rem !important; }
-/* Invisible right-hand card so a lone monitor keeps the half-width layout. */
-.bg3-spacer { visibility: hidden !important; }
-/* Parish header row: a full-width band separating each parish's monitor cards. */
-.bg3-parish-header {
-  background: #e9e4f0 !important;
-  border-left: 6px solid #6a51a3 !important;
-  box-shadow: none !important;
-}
-.bg3-parish-header .card-body {
-  padding: 0.35rem 0.75rem !important;
-  font-size: 1.05rem;
-}
+/* Invisible card that keeps a lone heatmap at half width in the 2-per-row grid. */
+.card-spacer { visibility: hidden !important; }
+/* Parish header band above each group of cards (scripts/build_pages.py). */
+.bg3-parish-header { background: #e9e4f0 !important; border-left: 6px solid #6a51a3 !important;
+                     box-shadow: none !important; }
+.bg3-parish-header .card-body { padding: 0.35rem 0.75rem !important; font-size: 1.05rem; }
 .bg3-parish-header p { margin: 0; }
+/* Invisible right-hand card so a lone card keeps the half-width layout. */
+.bg3-spacer { visibility: hidden !important; }
 </style>
 <div class="bslib-grid-item html-fill-item bslib-grid" data-layout="flow" style="display: grid; grid-template-rows: 340px 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 62fr) minmax(3em, 38fr);
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
 <div class="card bslib-card html-fill-container" data-title="EPA Criteria Pollutants by Location, grouped by parish" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-header"><div class="card-title"><span style="display: inline">
@@ -209,20 +193,21 @@ EPA Criteria Pollutants by Location, grouped by parish
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <p>The Clean Air Act identifies 6 air pollutants that pose the greatest health risks. They are known as criteria pollutants. This section tracks four EPA criteria pollutants — sulfur dioxide (SO₂), nitrogen dioxide (NO₂), ozone (O₃), and fine particle pollution (PM₂.₅) — measured at the state-run (LDEQ) regulatory monitors across Louisiana that report to EPA’s Air Quality System. Design values are specific to a monitoring location, so there is <strong>one card per monitor</strong>, and the cards are grouped under <strong>parish headers</strong>. Every card shows <strong>all four</strong> criteria pollutants, with the ones a monitor does not measure marked as such, so a location can be read as a complete picture of its criteria-pollutant concerns. Parishes are arranged by region — the New Orleans area first, then the Capital/Baton Rouge area, Acadiana, the southwest, central and north Louisiana — so neighbouring locations sit together.</p>
-<p>The EPA uses air monitoring data to determine if pollution levels meet the Clean Air Act requirements. They make these decisions based on a number representing all the measurements over a year taken at an air monitor. It is called a Design Value. It represents the highest pollution levels in that area. In the figure, each cell shows the <strong>EPA Design Value</strong> for that pollutant divided by the corresponding <strong>National Ambient Air Quality Standard (NAAQS)</strong>. A value below 1.00 means the design value is within the standard; values above 1.00 indicate the yearly average is greater than the Clean Air Act (NAAQS) standard and poses an increased health risk. Design values are computed using the same statistics EPA uses to determine if air pollution levels in the region are meeting the criteria set by the Clean Air Act. Columns cover single-year design values plus a year-to-date column, a rolling <strong>Last 365 Days</strong> window and the <strong>Last Available Month</strong>. EPA AQS releases data on a delay of weeks to months, so each of those three headings names, on its second line, the month the criteria data actually ends in. The color scale is shared across all locations, so cards can be compared directly.</p>
+<p>The EPA uses air monitoring data to determine if pollution levels meet the Clean Air Act requirements. They make these decisions based on a number representing all the measurements over a year taken at an air monitor. It is called a Design Value. It represents the highest pollution levels in that area. In the figure, each cell shows the <strong>EPA Design Value</strong> for that pollutant divided by the corresponding <strong>National Ambient Air Quality Standard (NAAQS)</strong>. A value below 1.00 means the design value is within the standard; values above 1.00 indicate the yearly average is greater than the Clean Air Act (NAAQS) standard and poses an increased health risk. Design values are computed using the same statistics EPA uses to determine if air pollution levels in the region are meeting the criteria set by the Clean Air Act. The calendar-year columns are <strong>EPA’s own published single-year values</strong> for each monitor, taken from EPA’s design value reports; the year-to-date column, the rolling <strong>Last 365 Days</strong> window and the <strong>Last Available Month</strong> — periods EPA has not published yet — are calculated by CHATTER from EPA’s daily monitoring data in the same way. EPA AQS releases data on a delay of weeks to months, so each of those three headings names, on its second line, the month the criteria data actually ends in. The color scale is shared across all locations, so cards can be compared directly.</p>
 <p>Not every monitor measures every pollutant. <strong>Hatched gray cells mean no measurement exists</strong> — a pollutant that is <em>not monitored at this site</em> is shown as an empty hatched row rather than being hidden, so a gap in coverage is never mistaken for a clean reading.</p>
 <details>
 <summary>
 <strong>How to read this plot</strong> (click to expand)
 </summary>
-<p>Each <strong>row</strong> is one of the six EPA criteria pollutants. Only four EPA criteria pollutants are measured. Each <strong>column</strong> is a period of time. Unlike the other tabs, the number here is not compared to a screening level — it is the <strong>EPA design value divided by the National Ambient Air Quality Standard (NAAQS)</strong>, written as a multiple with an “x.”</p>
-<p>A design value is the particular statistic EPA uses for each pollutant when comparing a monitor against its standard, rather than a simple average. (The <a href="./index_faq.html">FAQ</a> explains which statistic is used for each pollutant.) <strong>Below 1.00x</strong> means the pollutant is within the standard; <strong>above 1.00x</strong> means it is above the standard.</p>
+<p>Each <strong>row</strong> is one of the EPA criteria pollutants measured here — nitrogen dioxide (NO₂), sulfur dioxide (SO₂), ozone (O₃) and fine particles (PM₂.₅); the Clean Air Act names six, and four are measured at these sites. Each <strong>column</strong> is a period of time. Unlike the other pages, the number here is not compared to a screening level — it is the <strong>EPA design value divided by the National Ambient Air Quality Standard (NAAQS)</strong>, written as a multiple with an “x.”</p>
+<p>A design value is the particular statistic EPA uses for each pollutant when comparing a monitor against its standard: the annual average for NO₂ and PM₂.₅, the fourth-highest daily maximum 8-hour average for O₃, and the 99th percentile of the daily 1-hour maxima for SO₂. (The <a href="./index_methods.html">FAQ</a> lists the standard used for each pollutant.) <strong>Below 1.00x</strong> means the pollutant is within the standard; <strong>above 1.00x</strong> means it is above the standard.</p>
 <p>Design values are specific to a monitoring location, so there is <strong>one card per monitor</strong>. The cards are grouped under <strong>parish headers</strong> — each header names the parish and lists its monitors — and the parishes are arranged by region (the New Orleans area first, then the Capital/Baton Rouge area, Acadiana, the southwest, central and north Louisiana), so neighbouring locations sit together. Where a parish has several monitors, compare their cards directly: they often measure different pollutants.</p>
 <strong>A clarifying example.</strong>
-<p>Under the <strong>Jefferson Parish</strong> header, on the <strong>Kenner</strong> card, find the row for <strong>O3</strong> (ozone) and the column for <strong>2025</strong>. The square reads <strong>0.94x</strong> — Kenner’s ozone design value for 2025 was 6% below the national standard. In the same column, <strong>NO2</strong> reads <strong>0.37x</strong>, comfortably under, and <strong>PM₂.₅</strong> reads <strong>0.98x</strong> — just under the 24-hour fine-particle standard. The neighbouring <strong>Marrero</strong> card measures only PM₂.₅, and its 2023 value of <strong>2.07x</strong> is the highest on the tab.</p>
+<p>Under the <strong>Jefferson Parish</strong> header, on the <strong>Kenner</strong> heatmap, find the row for <strong>O₃</strong> (ozone) and the column for <strong>2025</strong>. The square reads <strong>0.94x</strong> — Kenner’s ozone design value for 2025 was 6% below the national standard. In the same column, <strong>NO₂</strong> reads <strong>0.09x</strong>, well under the annual standard, and <strong>PM₂.₅</strong> reads <strong>0.87x</strong> — EPA’s 2025 annual average of about 7.8 µg/m³, below the annual standard of 9.0 µg/m³.</p>
 <img src="figures/examples/bg3_example.png" class="img-fluid">
-<p><strong>Fine particles are where the exceedances show up.</strong> Single-year PM₂.₅ design values reached above the 24-hour standard at several monitors: <strong>Marrero</strong> (Jefferson) at <strong>2.07x</strong> in 2023, <strong>Westlake</strong> (Calcasieu) at <strong>1.89x</strong> in 2024, <strong>Monroe Airport</strong> (Ouachita) at <strong>1.83x</strong> in the 2026 year-to-date column, and <strong>Vinton</strong> (Calcasieu) and <strong>Chalmette Vista</strong> (St.&nbsp;Bernard) each above <strong>1.5x</strong> in at least one recent period. Sulfur dioxide crossed the standard at <strong>Norco</strong> (St.&nbsp;Charles; 1.31x in 2024) and <strong>Chalmette Vista</strong> (1.15x in 2023). Ozone sat just above the standard in 2023 and 2024 at several Baton Rouge-area monitors — <strong>Port Allen</strong>, <strong>Carville</strong>, <strong>LSU</strong> and <strong>Capitol</strong>, each between <strong>1.01x</strong> and <strong>1.10x</strong> — and has been below it since. Nitrogen dioxide stayed within the standard at every monitor that measures it. (The PM₂.₅ comparison here is against the 24-hour standard.)</p>
-<p><strong>This tab runs later than the other two.</strong> The criteria monitors report continuously and reach EPA’s database within weeks, while the canister results behind the cancer-risk and other-health-risk tabs arrive months later, so the criteria tab shows more recent years and its year-to-date, Last 365 Days and monthly columns end at a later date. <strong>The last three columns name their ending month.</strong> EPA AQS, the source for this tab, releases data weeks to months after the fact, so the year-to-date, Last 365 Days and monthly columns here each carry, on a second line, the month the criteria data actually ends in — for example “Last 365 Days (ending Jul 2026)” is the 365 days up to the end of July. A site whose own data ends earlier than that month shows a blank cell rather than older data.</p>
+<p><strong>Where the standards are reached.</strong> Ozone sat at or above the standard in 2023 or 2024 at several Baton Rouge-area monitors — <strong>Carville</strong> and <strong>Port Allen</strong> at <strong>1.10x</strong> in 2023, <strong>LSU</strong> at <strong>1.06x</strong> in both years, <strong>Capitol</strong> at <strong>1.06x</strong> in 2023 — and below it in 2025. Fine particles, compared with the annual standard, were above it in 2023 at <strong>Westlake</strong> (Calcasieu, <strong>1.12x</strong>), <strong>Shreveport / Calumet</strong> (Caddo, <strong>1.10x</strong>), <strong>Houma</strong> (Terrebonne, <strong>1.06x</strong>), <strong>Port Allen</strong> (<strong>1.04x</strong>) and <strong>Capitol</strong> (<strong>1.03x</strong>), and below it everywhere in 2025. Sulfur dioxide and nitrogen dioxide stayed within their standards at every monitor in the years EPA has published.</p>
+<p><strong>Where the numbers come from.</strong> The calendar-year columns are EPA’s own published single-year values (an asterisk marks a year EPA says does not meet its completeness requirements); the year-to-date, Last 365 Days and monthly columns, which EPA has not published yet, are calculated by CHATTER from EPA’s daily data. A note under each heatmap says which is which.</p>
+<p><strong>This page runs later than the other two.</strong> The criteria monitors report continuously and reach EPA’s database within weeks, while the canister results behind the cancer-risk and other-health-risk pages arrive months later, so the criteria page shows more recent years and its year-to-date, Last 365 Days and monthly columns end at a later date. <strong>The last three columns name their ending month.</strong> EPA AQS, the source for this page, releases data weeks to months after the fact, so the year-to-date, Last 365 Days and monthly columns here each carry, on a second line, the month the criteria data actually ends in — for example “Last 365 Days (ending Jul 2026)” is the 365 days up to the end of July. A site whose own data ends earlier than that month shows a blank cell rather than older data.</p>
 <p><strong>Hatched gray rows labeled “not monitored at this site”</strong> mean that monitor does not measure that pollutant at all. Coverage is uneven across the state: most monitors measure only ozone or only fine particles; nitrogen dioxide is measured at just a handful of sites, and sulfur dioxide mainly in the industrial river parishes.</p>
 <p><strong>One caution.</strong> These are single-year values. EPA’s official design values, the ones used to decide whether an area meets the Clean Air Act standard, average <strong>three consecutive years to make a decision, ensuring that a single stand-out year does not unduly influence compliance determinations</strong>. So a value above 1.00x here is a signal worth a closer look, not an official finding that the area violated the standard.</p>
 </details>
@@ -232,27 +217,9 @@ EPA Criteria Pollutants by Location, grouped by parish
     <span class="bslib-full-screen-enter badge rounded-pill">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><!-- The colour scale. The location cards below carry no scale panel of their
-     own — unlike the BG1/BG2 cards, which draw one beside every heatmap — so
-     without this the tab showed colours with nothing to read them against.
-     plot_bg3_legend() had been defined since the page was written but was
-     never called. --><div class="card cell bslib-card html-fill-container" data-title="Colour scale" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header"><div class="card-title"><span style="display: inline">
-Colour scale
-</span></div></div>
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-5-output-1.png" class="img-fluid quarto-dashboard-img-contain">
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><!-- One card per MONITOR, two per row, grouped under a parish header row
-     (region order).  The `title` cell option sets the dashboard card header;
-     the monitor label is also drawn on the figure. --><!-- BEGIN generated cards — scripts/build_pages.py; edit that, not this -->
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><!-- One card per location, two per row, on the same page as the overview.
+     The `title` cell option sets the dashboard card header; the location name
+     is also drawn on the figure. --><!-- BEGIN generated cards — scripts/build_pages.py; edit that, not this -->
 </div>
 <div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
@@ -275,7 +242,7 @@ I-610 (site 071-0021)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-6-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-5-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -315,7 +282,7 @@ Kenner (site 051-1001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-7-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-6-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -329,7 +296,7 @@ Marrero (site 051-2001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-8-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-7-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -360,7 +327,7 @@ Chalmette Vista (site 087-0007)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-9-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-8-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -374,7 +341,7 @@ Meraux (site 087-0004)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-10-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-9-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -405,7 +372,7 @@ Norco (site 089-0006)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-11-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-10-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -445,7 +412,7 @@ Garyville (site 095-0002)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-12-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-11-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -485,7 +452,7 @@ Convent (site 093-0002)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-13-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-12-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -525,7 +492,7 @@ Madisonville (site 103-0002)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-14-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-13-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -565,7 +532,7 @@ Hammond (site 105-0001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-15-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-14-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -605,7 +572,7 @@ Thibodaux (site 057-0004)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-16-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-15-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -645,7 +612,7 @@ Houma (site 109-0001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-17-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-16-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -685,7 +652,7 @@ Capitol (site 033-0009)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-18-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-17-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -699,7 +666,7 @@ LSU (site 033-0003)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-19-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-18-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -717,7 +684,7 @@ Pride (site 033-0013)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-20-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-19-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -757,7 +724,7 @@ Port Allen (site 121-0001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-20-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -797,7 +764,7 @@ Dutchtown (site 005-0004)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-22-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -837,7 +804,7 @@ Bayou Plaquemine (site 047-0009)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-23-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-22-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -851,7 +818,7 @@ Carville (site 047-0012)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-24-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-23-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -869,7 +836,7 @@ Geismar (site 047-0005)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-25-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-24-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -909,7 +876,7 @@ French Settlement (site 063-0002)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-26-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-25-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -949,7 +916,7 @@ New Roads (site 077-0001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-27-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-26-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -989,7 +956,7 @@ Lafayette / USGS (site 055-0007)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-28-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-27-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1029,7 +996,7 @@ St.Martinville (site 099-0001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-29-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-28-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1069,7 +1036,7 @@ Carlyss (site 019-0002)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-30-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-29-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1083,7 +1050,7 @@ Vinton (site 019-0009)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-31-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-30-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1101,7 +1068,7 @@ Westlake (site 019-0008)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-32-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-31-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1141,7 +1108,7 @@ Alexandria (site 079-0002)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-33-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-32-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1181,7 +1148,7 @@ Dixie (site 017-0001)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-34-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-33-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1195,7 +1162,7 @@ Shreveport / Calumet (site 017-0008)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-35-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-34-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1213,7 +1180,7 @@ Shreveport Calumet (site 017-0009)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-36-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-35-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1253,7 +1220,7 @@ Shreveport / Airport (site 015-0008)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-37-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-36-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1293,7 +1260,7 @@ Monroe / Airport (site 073-0004)
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<img src="index_bg3_location_files/figure-html/cell-38-output-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_bg3_location_files/figure-html/cell-37-output-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -1390,7 +1357,7 @@ Monroe / Airport (site 073-0004)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/StatAnalyticsIDD-GH\.github\.io\/Louisiana\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1718,6 +1685,19 @@ Monroe / Airport (site 073-0004)
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 StatAnalytics IDD, LLC, with Environmental Defense Fund · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> · not for commercial use</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (_event) {

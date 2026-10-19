@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CHATTER — Other Health Risks by Pollutants and Location – EDF CHATTER</title>
+<title>CHATTER — Other Health Risks by Pollutants and Location – Louisiana CHATTER</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EDF CHATTER</span>
+    <span class="navbar-title">Louisiana CHATTER</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -102,10 +102,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Louisiana</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./index_bg1_location.html"> 
 <span class="menu-text">Cancer Risk by Location</span></a>
@@ -119,10 +115,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Other Health Risks by Pollutants and Location</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index_bg2_effect.html"> 
-<span class="menu-text">Other Health Risks by Health Indicator</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./index_bg3_location.html"> 
 <span class="menu-text">EPA Criteria Pollutants by Location</span></a>
   </li>  
@@ -132,11 +124,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./index_methods.html"> 
-<span class="menu-text">Data &amp; Methods</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index_faq.html"> 
-<span class="menu-text">FAQ</span></a>
+<span class="menu-text">Data, Methods &amp; FAQ</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -185,14 +173,18 @@ ul.task-list li input[type="checkbox"] {
 .card-body { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
 .card-body img { display: block; height: auto !important; margin: 0 !important; }
 .card-header { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
-/* Parish header band and the invisible spacer for a lone card (two cards per
-   row, grouped by parish — 2026-09-13; same classes as the criteria tab). */
+.bslib-gap-spacing { gap: 0.4rem !important; }
+/* Invisible card that keeps a lone heatmap at half width in the 2-per-row grid. */
+.card-spacer { visibility: hidden !important; }
+/* Slim card naming the map section above each group of cards. */
+.section-banner .card-body { padding: 0.35rem 0.9rem !important; font-size: 1.05rem; }
+/* Parish header band above each group of cards (scripts/build_pages.py). */
 .bg3-parish-header { background: #e9e4f0 !important; border-left: 6px solid #6a51a3 !important;
                      box-shadow: none !important; }
 .bg3-parish-header .card-body { padding: 0.35rem 0.75rem !important; font-size: 1.05rem; }
 .bg3-parish-header p { margin: 0; }
+/* Invisible right-hand card so a lone card keeps the half-width layout. */
 .bg3-spacer { visibility: hidden !important; }
-.bslib-gap-spacing { gap: 0.4rem !important; }
 </style>
 <div class="bslib-grid-item html-fill-item bslib-grid" data-layout="flow" style="display: grid; grid-template-rows: 230px 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr) 52px minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
@@ -202,7 +194,7 @@ grid-auto-rows: minmax(0, 1fr);">
 Other Health Risks — All Pollutants by Location, grouped by parish
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
-<p>Each location card lists <strong>every other-health-risk pollutant</strong> measured at that site, the <strong>health effects</strong> each one is associated with, and its risk over time — the average concentration divided by the screening level. A value below <strong>1.00x</strong> is below the screening level; <strong>1.00x</strong> is the screening level itself. The bottom <strong>Total</strong> row adds those ratios across all pollutants at that site, the same “Total” definition used on the main dashboard.</p>
+<p>Each location card lists <strong>every other-health-risk pollutant</strong> measured at that site, the <strong>health effects</strong> each one is associated with, and its risk over time — the average concentration divided by the screening level. A value below <strong>1.00x</strong> is below the screening level; <strong>1.00x</strong> is the screening level itself. The bottom <strong>Total</strong> row adds those ratios across all pollutants at that site, the same “Total” definition used on the main page.</p>
 <p>Across Louisiana, CHATTER follows the sixteen LDEQ monitoring sites that measure hazardous air pollutants with 24-hour canisters — from the New Orleans area through the industrial river corridor to the Baton Rouge area, Lake Charles, Shreveport and Monroe. Each takes a 24-hour canister sample every sixth day. Hatched gray cells mean no measurement exists for that pollutant in that period.</p>
 <details>
 <summary>
@@ -210,11 +202,11 @@ Other Health Risks — All Pollutants by Location, grouped by parish
 </summary>
 <p>Each <strong>row</strong> is an air pollutant, with the health system or target organ it is associated with listed beside it. Each <strong>column</strong> is a period of time. The bottom row, <strong>Total</strong>, adds all the pollutants together for that period. The number in each square is the measured level divided by the EPA screening level, written as a multiple with an “x.”</p>
 <strong>A clarifying example.</strong>
-<p>On the Kenner card, find the row for <strong>Benzene</strong> and the column for <strong>2024</strong>. The square reads <strong>0.011x</strong>. The health effect listed beside benzene is <em>Immune system</em>, meaning breathing benzene at high enough levels can affect the immune system. The number means the average benzene level in 2024 was about 1% of its non-cancer screening level — <strong>well below</strong> it. (Benzene’s <em>cancer</em> screening level is far lower, which is why the same benzene reads close to <strong>1.0x</strong> on the Cancer Risk tab.) In the same column, <strong>Acrylonitrile</strong> reads <strong>0.120x</strong>, and the <strong>Total</strong> row reads <strong>0.190x</strong>: adding all fourteen pollutants together, the combined level was about 19% of the screening level.</p>
+<p>Find the <strong>Kenner</strong> heatmap and the row for <strong>Benzene</strong> and the column for <strong>2024</strong>. The square reads <strong>0.011x</strong>. The health effect listed beside benzene is <em>Immune system</em>, meaning breathing benzene at high enough levels can affect the immune system. The number means the average benzene level in 2024 was about 1% of its non-cancer screening level — <strong>well below</strong> it. (Benzene’s <em>cancer</em> screening level is far lower, which is why the same benzene reads close to <strong>1.0x</strong> on the Cancer Risk tab.) In the same column, <strong>Acrylonitrile</strong> reads <strong>0.120x</strong>, and the <strong>Total</strong> row reads <strong>0.190x</strong>: adding all fourteen pollutants together, the combined level was about 19% of the screening level.</p>
 <img src="figures/examples/bg2poll_example.png" class="img-fluid">
-<p><strong>Most of this tab is below the screening level.</strong> The color scale does not begin to darken until <strong>0.75x</strong>, and almost every value sits far under that, so most of the grid appears in the palest shade. That is the finding, not a rendering problem. The exceptions are <strong>acrylonitrile</strong> at the industrial-corridor sites such as <strong>Marrero</strong> and <strong>Chalmette Vista</strong>, which approaches or exceeds the screening level in the earlier years shown. Read the numbers to compare pollutants, sites, and years.</p>
+<p><strong>Most of this page is below the screening level.</strong> The color scale does not begin to darken until <strong>0.75x</strong>, and almost every value sits far under that, so most of the grid appears in the palest shade. That is the finding, not a rendering problem. The exceptions are <strong>acrylonitrile</strong> at the industrial-corridor sites such as <strong>Marrero</strong> and <strong>Chalmette Vista</strong>, which approaches or exceeds the screening level in the earlier years shown. Read the numbers to compare pollutants, sites, and years.</p>
 <p>A <strong>double asterisk</strong> (<code>**</code>) before a number means most of the samples behind it were below the laboratory’s detection limit, so the number is set by the detection limit rather than by the air and its true level is uncertain — anywhere from near zero up to the detection limit, not an upper bound. <strong>Hatched gray squares</strong> mean the pollutant was not measured in that period — which is different from a low reading, and so is marked differently.</p>
-<p>For a general explanation of heat maps, see the <a href="./index_faq.html">Frequently Asked Questions</a>.</p>
+<p>For a general explanation of heat maps, see the <a href="./index_methods.html">Frequently Asked Questions</a>.</p>
 </details>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -791,7 +783,7 @@ Monroe Airport
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/StatAnalyticsIDD-GH\.github\.io\/Louisiana\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1119,6 +1111,19 @@ Monroe Airport
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 StatAnalytics IDD, LLC, with Environmental Defense Fund · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> · not for commercial use</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (_event) {
